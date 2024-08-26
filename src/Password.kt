@@ -3,7 +3,7 @@ class Password {
     private fun createPassword(length: Int): String {
         //Функция генерации пароля из чисел и букв заданной длины
         val charSet = ('0'..'9') + ('a'..'z')
-        val passwordInner = (0..length).map { charSet.random() }
+        val passwordInner = (0..<length).map { charSet.random() }
         val passwordIntermediate = mutableListOf<String>()
         for (i in passwordInner.indices) {
             if (i % 2 == 0) {
